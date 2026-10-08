@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Screenshot to GPT</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="shared.js" defer></script>
+  <script src="popup.js" defer></script>
+</head>
+<body>
+  <main>
+    <header><img src="icons/icon48.png" width="40" height="40" alt=""><div><h1>Screenshot to GPT</h1><p>Capture. Attach. Review.</p></div></header>
+    <button id="capture" class="primary" type="button">Send Screenshot to GPT</button>
+    <p class="hint">Your screenshot is attached in Chat mode.<br>Press <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>A</kbd> from any webpage.</p>
+    <label for="default-prompt">Default prompt <span>(optional)</span></label>
+    <textarea id="default-prompt" rows="3" maxlength="2000" placeholder="What would you like to ask about this screenshot?"></textarea>
+    <label class="check"><input id="insert-default-prompt" type="checkbox"> Insert default prompt</label>
+    <label class="check"><input id="auto-send" type="checkbox"> Auto-send</label>
+    <p id="auto-send-hint" class="hint">Auto-send is off by default. When enabled, it submits the screenshot after upload.</p>
+    <p id="settings-status" class="hint" role="status" aria-live="polite"></p>
+    <p id="status" role="status" aria-live="polite">Ready to capture.</p>
+    <footer><button id="options" type="button">Open settings</button><span>Only captures when you ask.</span></footer>
+  </main>
+</body>
+</html>

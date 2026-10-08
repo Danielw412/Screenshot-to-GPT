@@ -1,0 +1,8 @@
+{
+  "name": "screenshot-to-gpt",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Plain JavaScript Chrome extension; npm is only needed to run development tests.",
+  "scripts": { "test": "node --test --test-isolation=none tests/*.test.cjs", "check": "node --check background.js && node --check chatgpt-content.js && node --check popup.js && node --check shared.js" },
+  "devDependencies": { "jsdom": "^27.0.0" }
+}

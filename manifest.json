@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Screenshot to GPT",
+  "version": "1.0.0",
+  "description": "Capture the visible page and attach it to an eligible ChatGPT chat. Review before sending.",
+  "minimum_chrome_version": "120",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["https://chatgpt.com/*"],
+  "background": { "service_worker": "background.js" },
+  "action": {
+    "default_title": "Screenshot to GPT — capture this page",
+    "default_popup": "popup.html?capture=1",
+    "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+  },
+  "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "options_ui": { "page": "popup.html", "open_in_tab": true },
+  "commands": {
+    "capture-screenshot": {
+      "suggested_key": { "default": "Alt+Shift+A" },
+      "description": "Attach a screenshot to ChatGPT"
+    }
+  },
+  "content_scripts": [{
+    "matches": ["https://chatgpt.com/*"],
+    "js": ["shared.js", "chatgpt-content.js"],
+    "run_at": "document_idle"
+  }],
+  "content_security_policy": { "extension_pages": "script-src 'self'; object-src 'self'" }
+}

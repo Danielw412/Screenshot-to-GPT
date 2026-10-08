@@ -1,0 +1,34 @@
+:root { color-scheme: light dark; font: 14px/1.5 system-ui, -apple-system, sans-serif; color: #172c27; background: #f6faf8; }
+* { box-sizing: border-box; }
+body { margin: 0; width: 354px; }
+main { padding: 22px; }
+header { display: flex; gap: 12px; align-items: center; margin-bottom: 22px; }
+h1 { margin: 0; font-size: 19px; font-weight: 650; letter-spacing: -.4px; }
+header p { margin: 2px 0 0; color: #536c63; font-size: 12px; }
+button, textarea { font: inherit; }
+button { cursor: pointer; }
+.primary { width: 100%; border: 0; border-radius: 9px; padding: 12px; color: white; background: #176b50; font-weight: 600; }
+.primary:hover { background: #11563f; }
+button:disabled { cursor: wait; opacity: .65; }
+.hint { font-size: 12px; color: #536c63; }
+label:not(.check) { display: block; margin: 20px 0 6px; font-weight: 600; }
+label span { color: #536c63; font-size: 12px; font-weight: 400; }
+textarea { resize: vertical; width: 100%; min-height: 90px; border: 1px solid #ccd9d2; border-radius: 9px; padding: 10px; color: inherit; background: #fff; }
+.check { display: flex; gap: 9px; align-items: center; margin-top: 13px; }
+input[type=checkbox] { width: 16px; height: 16px; margin: 0; accent-color: #176b50; }
+:focus-visible { outline: 3px solid #64ad91; outline-offset: 3px; }
+kbd { border: 1px solid #ccd9d2; border-radius: 4px; padding: 0 3px; font: inherit; }
+#status { padding: 10px 12px; border-radius: 8px; background: #e7f0eb; font-size: 12px; overflow-wrap: anywhere; }
+#status[data-error=true] { color: #912018; background: #fff0eb; }
+#settings-status:empty { display: none; }
+footer { display: flex; justify-content: space-between; gap: 8px; align-items: center; color: #536c63; font-size: 10px; }
+footer button { border: 0; padding: 0; color: #176b50; background: transparent; font-size: 12px; text-decoration: underline; }
+body.options-page { width: auto; max-width: 440px; margin: 48px auto; }
+@media (prefers-color-scheme: dark) {
+  :root { color: #e4efe8; background: #15201b; }
+  header p, .hint, label span, footer { color: #a9bfb1; }
+  textarea { background: #1d2c23; border-color: #43574a; }
+  #status { background: #263e30; }
+  #status[data-error=true] { color: #ffc5b8; background: #472d27; }
+  footer button { color: #9adaba; }
+}
